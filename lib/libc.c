@@ -14,7 +14,7 @@ void* calloc(size_t elements_num, size_t element_size) {
     return (void*)ptr;
 }
 
-void* calloc(void* ptr, size_t new_size) {
+void* realloc(void* ptr, size_t new_size) {
     size_t ptr = 0;
     asm volatile("int $0x80" :: "c"(new_size), "d"(ptr), "a"(9), "b"(2));
     asm volatile("movl %%esi, %0" : "=a"(ptr));
