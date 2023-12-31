@@ -16,18 +16,18 @@
 
 #0x9 function table
 ---
-| *%ebx* | Name     | Description  | out |
+| *%ebx* | Name     | Description  | out | in |
 |------|----------|--------------|-----|
-| 0    | mmap     | get_mmap     |  *%esi*  ptr |
-| 1    | malloc   | sys_malloc   |  *%esi*  ptr |
-| 2    | calloc   | sys_calloc   |  *%esi*  ptr |
-| 3    | realloc  | sys_realloc  |  *%esi*  ptr |
-| 4    | meminf   | *%ecx* = 0 : get free memory ; *%ecx* = 1 : get used memory |  *%esi*  size|
+| -    | mmap     | get_mmap     |  *%esi*  ptr | - |
+| 1    | malloc   | sys_malloc   |  *%esi*  ptr | *%esi*  size |
+| 2    | calloc   | sys_calloc   |  *%esi*  ptr | *%esi*  nmemb, *%esi*  memb_size|
+| 3    | realloc  | sys_realloc  |  *%esi*  ptr | *%esi*  size, *%edi*  new_size |
+| 4    | meminf   | *%ecx* = 0 : get free memory ; *%ecx* = 1 : get used memory |  *%esi*  size| - |
 
 #0xB function table
 ---
-| *%ebx* | Name     | Description  | out |
+| *%ebx* | Name     | Description  | out | in |
 |------|----------|--------------|-----|
 | 0    | -        | -            | - |
-| 1    | kfree    | free memory in *%ecx* (ptr)   | - |
-| 2    | kcfree   | free  and clear memory in *%ecx* (ptr)   | - |
+| 1    | kfree    | free memory in *%ecx* (ptr)   | - | *%esi*  ptr |
+| 2    | kcfree   | free  and clear memory in *%ecx* (ptr)   | - | *%esi*  ptr |
