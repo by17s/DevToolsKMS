@@ -1,4 +1,4 @@
-#Hello world
+# Hello world
 ---
 
 *main.asm*
@@ -16,5 +16,5 @@ hello_world:
 msg db "Hello, World!", 10, 0
 ```
 
-###Compile
+### Compile
 `nasm -f bin main.asm main.bin`
