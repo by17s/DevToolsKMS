@@ -1,4 +1,4 @@
-#Execute command in *uxSH*
+# Execute command in *uxSH*
 ---
 
 *main.asm*
@@ -14,5 +14,5 @@ system:
 cmd db "system meminf", 0
 ```
 
-###Compile
+### Compile
 `nasm -f bin main.asm main.bin`
