@@ -17,7 +17,7 @@
 #0x9 function table
 ---
 | *%ebx* | Name     | Description  | out | in |
-|------|----------|--------------|-----|
+|------|----------|--------------|-----|---|
 | -    | mmap     | get_mmap     |  *%esi*  ptr | - |
 | 1    | malloc   | sys_malloc   |  *%esi*  ptr | *%esi*  size |
 | 2    | calloc   | sys_calloc   |  *%esi*  ptr | *%esi*  nmemb, *%esi*  memb_size|
@@ -27,7 +27,7 @@
 #0xB function table
 ---
 | *%ebx* | Name     | Description  | out | in |
-|------|----------|--------------|-----|
-| 0    | -        | -            | - |
+|------|----------|--------------|-----|---|
+| 0    | -        | -            | - | - |
 | 1    | kfree    | free memory in *%ecx* (ptr)   | - | *%esi*  ptr |
 | 2    | kcfree   | free  and clear memory in *%ecx* (ptr)   | - | *%esi*  ptr |
