@@ -21,7 +21,7 @@
 | -    | mmap     | get_mmap     |  *%esi*  ptr | - |
 | 1    | malloc   | sys_malloc   |  *%esi*  ptr | *%esi*  size |
 | 2    | calloc   | sys_calloc   |  *%esi*  ptr | *%esi*  nmemb, *%esi*  memb_size|
-| 3    | realloc  | sys_realloc  |  *%esi*  ptr | *%esi*  size, *%edi*  new_size |
+| 3    | realloc  | sys_realloc  |  *%esi*  ptr | *%esi*  ptr, *%edi*  new_size |
 | 4    | meminf   | *%ecx* = 0 : get free memory ; *%ecx* = 1 : get used memory |  *%esi*  size| - |
 
 #0xB function table
